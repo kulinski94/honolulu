@@ -67,5 +67,17 @@ angular.module('apps').controller('AppsController', ['$scope', '$stateParams', '
                 appId: $stateParams.appId
             });
         };
+
+        $scope.status = function () {
+
+            $scope.statusResponse = {
+                'db' : 1,
+                'quote' : 0
+            };
+
+            //$scope.statusResponse = Apps.getStatus({
+            //    appId: $stateParams.appId
+            //});
+        };
     }
 ]);
