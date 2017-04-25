@@ -18,18 +18,18 @@ public class Helpers {
         System.out.println();
     }
 
-    public static double[] subtract(double[] matrix1, double[] matrix2) {
-        double[] result = new double[matrix1.length];
-        for (int i = 0; i < matrix1.length; i++) {
-            result[i] = matrix1[i]- matrix2[i];
+    public static double[] subtract(double[] row1, double[] row2) {
+        double[] result = new double[row1.length];
+        for (int i = 0; i < row1.length; i++) {
+            result[i] = row1[i]- row2[i];
         }
         return result;
     }
 
-    public static double[] multiply(double multiply, double[] matrix) {
-        double[] result = new double[matrix.length];
-        for (int i = 0; i < matrix.length; i++) {
-            result[i] = matrix[i]*multiply;
+    public static double[] multiply(double multiply, double[] row) {
+        double[] result = new double[row.length];
+        for (int i = 0; i < row.length; i++) {
+            result[i] = row[i]*multiply;
         }
         return result;
     }
