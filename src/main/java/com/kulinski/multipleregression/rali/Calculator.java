@@ -20,14 +20,10 @@ public class Calculator {
     }
 
     private static void diagonalize(double[][] matrix) {
-        for (int row = 1; row < matrix.length; row++) {
-            matrix[row] = subtract(multiply(matrix[0][0], matrix[row]), multiply(matrix[0][row], matrix[0]));
-        }
-        for (int row = 2; row < matrix.length; row++) {
-            matrix[row] = subtract(multiply(matrix[1][1], matrix[row]), multiply(matrix[1][row], matrix[1]));
-        }
-        for (int row = 3; row < matrix.length; row++) {
-            matrix[row] = subtract(multiply(matrix[2][2], matrix[row]), multiply(matrix[2][row], matrix[2]));
+        for (int column = 0; column < 3; column++) {
+            for (int row = column + 1; row < matrix.length; row++) {
+                matrix[row] = subtract(multiply(matrix[column][column], matrix[row]), multiply(matrix[column][row], matrix[column]));
+            }
         }
     }
 
@@ -38,6 +34,5 @@ public class Calculator {
         double b0 = (matrix[0][4] - b3 * matrix[0][3] - b2 * matrix[0][2] - b1 * matrix[0][1]) / matrix[0][0];
         return new Result(b0, b1, b2, b3);
     }
-
 
 }

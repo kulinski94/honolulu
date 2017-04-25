@@ -43,10 +43,6 @@ public class Helpers {
         };
     }
 
-    public static double sum(List<Equation> rows, ToDoubleFunction<Equation> equationToDoubleFunction) {
-        return rows.stream().mapToDouble(equationToDoubleFunction).sum();
-    }
-
     public static double[] row4(List<Equation> rows) {
         return new double[]{
                 sum(rows, equation -> equation.y),
@@ -85,5 +81,9 @@ public class Helpers {
                 sum(rows, equation -> equation.y),
                 sum(rows, equation -> equation.z),
         };
+    }
+
+    private static double sum(List<Equation> rows, ToDoubleFunction<Equation> equationToDoubleFunction) {
+        return rows.stream().mapToDouble(equationToDoubleFunction).sum();
     }
 }
